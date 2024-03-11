@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Mukta:wght@500&family=PT+Sans&family=Poppins:wght@200&family=Sofia+Sans+Condensed&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+   
+}
+.outer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #dddfe7b0;
+}
+/* .form-box form
+{
+    position: relative;
+    width: 380px;
+    height: 80vh;
+    border-radius: 8px;
+    
+} */
+.form-box form
+{
+    width: 450px;
+    min-height: 100vh;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    inset: 4px;
+    position: relative;
+    background:#cf933afe ;
+    padding: 50px 40px;
+    border-radius: 8px;
+    box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.452);
+    z-index:2;
+   
+}
+.outer .form-box form h3
+{
+    color: rgb(253, 243, 243);
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 0.1em;
+   
+    margin-bottom: 10px;
+    
+
+}
+
+.input-field
+{
+    position: relative;
+    width: 300px;
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 0.8em;
+    
+}
+.inputs
+{
+    display: flex;
+    justify-content: space-around;
+}
+.input-field input
+{
+   position: relative;
+    width: 100%;
+    background: transparent;
+    border:none;
+    box-shadow: none;
+    outline: none;
+    color: rgba(84, 84, 56, 0.84);
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+    padding: 0px 10px 5px 10px;
+    left: 50px;
+  
+}
+
+.input-field label
+{
+    position: relative;
+    left: 0;
+    pointer-events: none;
+    color: beige;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+/*  */
+.outer form .input-field span
+{
+    position: absolute;
+    left: 130px;
+    bottom: 0;
+    margin-bottom: 7px;
+    width: 80%;
+    
+    height: 2px;
+    background: #fff;
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+   
+}
+small
+{
+    font-size: 0.7rem;
+    font-weight: 200px;
+}
+
+.outer form .login 
+{
+    display: flex; 
+    justify-content:center;
+    margin: 10px 0;
+    font-size: 1em;
+    color: beige;
+}
+.outer form .login a
+{
+    padding-left: 10px;
+    text-decoration: none;
+    color: beige;
+    font-weight: bold;
+    
+}
+.outer form .login p
+{
+    color:rgb(239, 206, 156) ;
+    
+}
+.outer form .login a:hover
+{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: rgb(255, 255, 255);
+}
+.buttons button
+{
+    background-color: beige; 
+    color: #cf933afe ;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border: none;
+    margin-top: 30px;
+    width: 80%;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 1px 2px 5px rgb(255, 253, 253);
+    
+    padding: 5px 0;
+    
+    
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+#user-btn a
+{
+    text-decoration: none;
+    color: #cf933afe;
+}
+.buttons button:hover
+{
+    font-size: 1.1rem;
+    font-weight: bolder;
+    box-shadow: 1px 5px 20px rgb(52, 49, 49);
+}

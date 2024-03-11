@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Mukta:wght@700&family=PT+Sans&family=Poppins:wght@200&family=Raleway:wght@600&family=Sofia+Sans+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Mukta:wght@700&family=PT+Sans&family=Poppins:wght@200;400&family=Raleway:wght@600&family=Sofia+Sans+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap');
+
+
+body
+{
+    background:linear-gradient(to bottom ,#f9f9f9,#dedad5);
+    height: 110vh;
+  
+}
+.heading
+{
+    font-size: 2.5em;
+    font-family: 'EB Garamond', serif;
+    font-weight: bolder;
+    letter-spacing: 0.1rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #cf933afe;
+    text-shadow: 1px 1px 1px rgb(248, 246, 246);
+}
+a
+{
+    text-decoration: none;
+}
+p
+{
+    font-size: 15px;
+    margin: 12px 0 0;
+
+}
+.submit-claim-btn {
+    /* font-size: 1rem; */
+    border: none;
+    /* border-radius: 20px; */
+    box-shadow: 1px 2px 5px rgb(91, 87, 87);
+    background:#cf933afe;
+    cursor: pointer;
+    color: rgb(254, 254, 254);
+    margin-right: 20px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+    
+}
+.submit-claim-btn:hover
+{
+    font-weight: bold;
+    box-shadow: 1px 5px 10px rgb(52, 49, 49);
+}
+.search-employee input[type="search"],button[id="search"]
+{
+    /* border-radius: 20px; */
+    box-shadow: 1px 2px 5px 0px rgb(170, 167, 167);
+}
+.feature-buttons button
+{
+    /* padding: 6px; */
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.feature-buttons button:hover
+{
+    font-weight: bolder;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.413);
+}
+.pagination
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.actions button
+{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 20px;
+    background: transparent;
+    border: none;
+}
+.actions i:hover
+{
+   
+   color: #34afec;
+   /* box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.413); */
+}
+#deleteClaimModal .modal-header
+{
+    background: #cf933afe;
+    color: wheat;
+    font-size: 1.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+
+}
+tr>td,th
+{
+    font-family: 'Frank Ruhl Libre', serif;
+}
+td:hover{
+    font-weight: bold;
+}
+/* .table-head
+{
+    display: flex;
+    justify-content: space-evenly;
+
+} */

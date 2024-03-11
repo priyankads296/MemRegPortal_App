@@ -1,0 +1,317 @@
+ @import url('https://fonts.googleapis.com/css2?family=Lato&family=Mukta:wght@500&family=PT+Sans&family=Poppins:wght@200&family=Sofia+Sans+Condensed&display=swap');
+
+ *{
+    
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+   
+}
+ .outer
+ {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+     background: #dddfe7b0;
+    
+ 
+ }
+ .card 
+{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border: none;
+    inset: 4px;
+    background:#cf933afe ;
+    padding: 50px 40px;
+    border-radius: 8px ;
+    flex-direction: column;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.452);
+   
+}
+form h3
+{
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+.input-field
+{
+    position: relative;
+    display:flex;
+    justify-content: space-between;
+    width: 350px;
+
+}
+
+.input-field input
+{
+    
+    position: relative;
+    width: 100%;
+    background: transparent;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: rgba(193, 188, 188, 0.461);
+    color: rgba(84, 84, 56, 0.84);
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    
+    z-index: 10;
+    padding: 0px 10px 5px 10px;
+    font-weight: bold;
+    
+    
+    
+}
+.input-field label
+{
+    position: relative;
+    left: 0;
+    padding-right: 20px;
+    pointer-events: none;
+    color: beige;
+    font-size: 1.1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+.buttons button
+{
+    background-color: beige; 
+    color: #cf933afe ;
+    font-size: 1.2rem;
+    
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border: none;
+    outline: 0;
+    margin-top: 10px;
+    width: 80%;
+    margin-left: 30px;
+    /* margin-bottom: 15px; */
+    display: flex;
+    justify-content: center;
+    box-shadow: 1px 2px 5px rgb(255, 253, 253);
+    font-family: 'Poppins', sans-serif;
+    padding: 5px 0;
+    
+    
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+.buttons button:hover
+{
+    font-size: 1.1rem;
+    font-weight: bolder;
+    box-shadow: 1px 5px 20px rgb(52, 49, 49);
+}
+.outer form .signup p
+{
+    color:rgb(239, 206, 156) ;
+}
+.outer form small
+{
+    font-size: 0.7em;
+    font-weight: 200px;
+    padding: none;
+}
+
+.outer form .signup 
+{
+    display: flex; 
+    justify-content:center;
+    margin: 10px 0;
+    font-size: 1em;
+    color: beige;
+    padding-top: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+.outer form .signup a
+{
+    padding-left: 10px;
+    text-decoration: none;
+    color: beige;
+    font-weight: bold;
+    
+}
+.outer form .signup a:hover
+{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: rgb(255, 255, 255);
+}
+
+ /*
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+.outer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #dddfe7b0;
+   
+
+}
+/* .form-box form
+{
+    position: relative;
+    width: 380px;
+    height: 80vh;
+    border-radius: 8px;
+    
+} */
+
+/* 
+.form-box form
+{
+    width: 380px;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    inset: 4px;
+    background:#cf933afe ;
+    padding: 50px 40px;
+    border-radius: 8px;
+    z-index:2;
+    
+    flex-direction: column;
+    box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.452);
+   
+}
+.outer .form-box form h3
+{
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    
+    text-align: center;
+    letter-spacing: 0.1em;
+
+}
+.input-field
+{
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+.input-field input
+{
+    position: relative;
+    width: 100%;
+    background: transparent;
+    border:none;
+    box-shadow: none;
+    outline: none;
+    color: rgb(84, 82, 82);
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+    padding: 10px 10px 10px;
+}
+.input-field label
+{
+    position: relative;
+    left: 0;
+    
+    pointer-events: none;
+    color: beige;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+.outer form .input-field input:valid ~ label,
+.outer form .input-field input:focus ~ label
+{
+    color: #fff;
+    font-size: 0.75em;
+    transform: translateY(-34px);
+}
+.outer form .input-field i
+{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+   
+}
+.outer form .signup p
+{
+    color:rgb(239, 206, 156) ;
+}
+.outer form .input-field small
+{
+    font-size: 0.7em;
+    font-weight: 200px;
+}
+
+.outer form .signup 
+{
+    display: flex; 
+    justify-content:center;
+    margin: 10px 0;
+    font-size: 1em;
+    color: beige;
+}
+.outer form .signup a
+{
+    padding-left: 10px;
+    text-decoration: none;
+    color: beige;
+    font-weight: bold;
+    
+}
+.outer form .signup a:hover
+{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: rgb(255, 255, 255);
+}
+.buttons button
+{
+    background-color: beige; 
+    color: #cf933afe ;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border: none;
+    margin-top: 30px;
+    width: 80%;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 1px 2px 5px rgb(255, 253, 253);
+    
+    padding: 5px 0;
+    
+    
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+.buttons button:hover
+{
+    font-size: 1.1rem;
+    font-weight: bolder;
+    box-shadow: 1px 5px 20px rgb(52, 49, 49);
+} */ 

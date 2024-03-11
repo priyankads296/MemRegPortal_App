@@ -1,0 +1,148 @@
+<div class="outer">
+    
+        <div class="form-box">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"> 
+        
+                <h3>REGISTER</h3>
+                
+                <div class="input-field">
+                    <div class="inputs">
+                        <label for="firstname">Enter Firstname</label>
+                        <input type="text" name="firstname"  id="firstname" autocomplete="off"
+                        formControlName="firstname" [(ngModel)]="registerDetails.Firstname"> 
+                        <span></span>
+                    </div>
+                    
+                </div>
+                
+                <small *ngIf="Firstname.errors?.['required'] && (Firstname.touched || Firstname.dirty)"
+                class="text-danger">*Firstname is required</small>
+                <small *ngIf="Firstname.errors?.['minlength'] && (Firstname.touched || Firstname.dirty)"
+                class="text-danger">*Firstname is too short</small>
+                <small *ngIf="Firstname.errors?.['pattern'] && (Firstname.touched || Firstname.dirty)"
+                class="text-danger">*Firstname should start with alphabet</small>
+                
+                <div class="input-field">
+                    <div class="inputs">
+                        <label for="lastname"> Enter Lastname</label>
+                         <input type="text" name="lastname" id="lastname" autocomplete="off"
+                            formControlName="lastname" [(ngModel)]="registerDetails.Lastname"> 
+                        <span></span>
+                    </div>
+                    
+                </div>
+                
+                <small *ngIf="Lastname.errors?.['required'] && (Lastname.touched || Lastname.dirty)"
+                class="text-danger">*Lastname is required</small>
+                <small *ngIf="Lastname.errors?.['minlength'] && (Lastname.touched || Lastname.dirty)"
+                class="text-danger">*Lastname is too short</small>
+                <small *ngIf="Lastname.errors?.['pattern'] && (Lastname.touched || Lastname.dirty)"
+                class="text-danger">*Lastname should start with alphabet</small>
+               
+                
+                <div class="input-field">
+                    <div class="inputs">
+                        <label for="username"> Set username</label>
+                        <input type="email" name="username"id="username" autocomplete="off"
+                        formControlName="username" [(ngModel)]="registerDetails.Username">
+                        <span></span>
+                    </div>
+                    
+                    
+                </div>
+                <small *ngIf="Username.errors?.['required'] && (Username.touched || Username.dirty)"
+                        class="text-danger">*Username is required</small>
+                   
+                    <small *ngIf="Username.errors?.['email'] && (Username.touched || Username.dirty)"
+                        class="text-danger">*Please enter valid email Id</small>
+                
+                <div class="input-field">
+                    <div class="inputs">
+                        <label for="password"> Set Password</label>
+                        <input type="password" class="password" 
+                        formControlName="password" [(ngModel)]="registerDetails.Password">
+                        <span></span>
+                    </div>
+                   
+                    <small *ngIf="Password.errors?.['required'] && (Password.touched || Password.dirty)"
+                        class="text-danger">*Password is required</small>
+                    <small *ngIf="Password.errors?.['minlength'] || Password.errors?.['maxlength'] && (Password.touched || Password.dirty)"
+                        class="text-danger">*Password should be at least 6 and at the max 15 characters long.</small>
+                </div>
+                
+                <div class="input-field">
+                    <div class="inputs">
+                        <label for="phoneno"> Set Phoneno</label>
+                        <input type="phoneno"  class="phoneno" autocomplete="off"
+                         formControlName="phoneno" [(ngModel)]="registerDetails.Phoneno"> 
+                         <span></span>
+
+                    </div>
+                    
+                    
+                </div>
+                <small *ngIf="Phoneno.errors?.['required'] && (Phoneno.touched || Phoneno.dirty)"
+                        class="text-danger">*Phoneno is required</small>
+                    <small *ngIf="Phoneno.errors?.['minlength'] || Phoneno.errors?.['maxlength'] && (Phoneno.touched || Phoneno.dirty)"
+                        class="text-danger">*Phoneno should be at least 10 characters long.</small>
+               
+                <div class="input-field">
+                    <div class="inputs">
+                        <label for="confirmpassword"> Confirm Password</label>
+                        <input type="password"  class="confirmpassword" formControlName="confirmpassword">
+                        <span></span>
+                    </div>
+
+                    <small [ngStyle]="{'display':repeatPass}"
+                        class="text-danger">*ConfirmPassword is Invalid</small>
+                    
+                </div>
+                
+               
+                <div class=" buttons">
+                    <button id="user-btn" [disabled]="registerForm.invalid" class="btn btn-secondary btn-lg" type="submit">Sign In
+                            </button>
+                    <!-- <button [disabled]="registerForm.invalid" class="btn btn-secondary btn-lg" type="submit">Register</button> -->
+                    <!-- <button class="btn btn-outline-secondary btn-lg" type="button"><a routerLink="../ae">Sign In As
+                            Account
+                            Executive</a></button> -->
+                   
+                </div>
+                <div class="text-center pt-2 login text-muted"><p>Already have an account? </p><a id="forget"  routerLink="../login"
+                       >Login</a>
+                </div>
+                <div class="text-center login">
+                    <p><a id="forget" href=""><i class="bi bi-house-door-fill"></i>&nbsp;Home</a></p>
+                </div>
+            
+                <!-- <div class="social">
+                    <div class="go"><i class="bi bi-google"></span></div>
+                    <div class="fb"><i class="bi bi-facebook"></span></div>
+                </div> -->
+            
+            </form>
+     
+
+
+    </div>
+    
+</div>
+
+
+
+
+<!--
+<form>
+    <div class="row">
+        <div class="col text-center p-2 mb-3 bg-light">
+            <span class="fs-3">Register</span>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" id="Firstname">
+            </div>
+        </div>
+
+    </div>
+</form>
+-->

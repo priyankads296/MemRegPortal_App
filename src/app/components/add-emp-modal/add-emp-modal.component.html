@@ -1,0 +1,186 @@
+<div class="modal fade" id="addEmployeeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Enter Employee Information</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            
+              <form [formGroup]="employeeForm" (ngSubmit)="addEmployee()">
+                  <div class="row">
+                      <div class="col">
+                          <input type="text" class="form-control" placeholder="Enter the Name"
+                          id="name" formControlName="Name" [(ngModel)]="addEmployeeRequest.Name" required>
+                          <div class="form-text text-danger"
+                            *ngIf="name.errors?.['required'] && (name.touched || name.dirty)">
+                             Name is required!
+                          </div>
+                          <div class="form-text text-danger"
+                            *ngIf="name.errors?.['pattern'] && (name.touched || name.dirty)">
+                            Should only contain alphabets and space!
+                          </div>
+                      </div>
+                      
+                  </div>
+  
+                  <div class="row mt-4">
+                      <div class="col form-heading">
+                          <h6 class="text-center fst-italic">Personal Details</h6>
+                      </div>
+                  </div>
+  
+                  <div class="row">
+                      <div class="col">
+                          <label for="datepicker" class="form-label">Date Of Birth</label>
+                          <input type="date" class="form-control" id="datepicker"
+                          formControlName="DOB" [(ngModel)]="addEmployeeRequest.DOB" required>
+                      </div>
+                      <div class="col">
+                          <div class="row">
+                              <label for="gender" class="form-label">Gender</label>
+                          </div>
+                          <div class="row">
+                              <div class="col">
+                                  <div class="form-check form-check-inline">
+                                      <input class="form-check-input" type="radio" name="Gender" id="male"
+                                      formControlName="Gender" value="male" [(ngModel)]="addEmployeeRequest.Gender" required>
+                                      <label class="form-check-label" for="male">
+                                        Male
+                                      </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                      <input class="form-check-input" type="radio" name="Gender" id="female"
+                                      formControlName="Gender" value="female" [(ngModel)]="addEmployeeRequest.Gender" required>
+                                      <label class="form-check-label" for="female">
+                                        Female
+                                      </label>
+                                    </div>
+                              </div>
+                          </div>
+                      </div>  
+                  </div> 
+                  <div class="row mt-4">
+                      <div class="col   form-heading">
+                          <h6 class="text-center fst-italic">Complete Address</h6>
+                      </div>
+                      
+                  </div>
+  
+                      <div class="row">
+                          
+                          <div class="col">
+  
+                              <select class="select form-control" (change)="populateStates()" formControlName="Country" id="country"
+                              name="country" [(ngModel)]="addEmployeeRequest.Country">
+                                  <option value="" disabled selected>-Choose Country-</option>
+                                  <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+                              </select>
+    
+                          </div>
+                          <div class="col">
+                              <select class="select form-control" formControlName="State" id="state" name="state"
+                                  [(ngModel)]="addEmployeeRequest.State">
+                                  <option value="" disabled selected>-Choose State-</option>
+                                  <option *ngFor="let state of states" [value]="state">{{state}}</option>
+                              </select>
+                              <div class="form-text text-danger" *ngIf="state.errors?.[''] && (state.touched || state.dirty)">
+                                   State Name is required!
+                              </div>
+                          </div>
+                          <div class="col">
+                              <input type="text" class="form-control" id="city" name="city" [(ngModel)]="addEmployeeRequest.City"
+                              formControlName="City" required>
+                              <div class="form-text text-danger"
+                                  *ngIf="city.errors?.['required'] && (city.touched || city.dirty)">
+                                  City is required!
+                              </div>
+                              <div class="form-text text-danger" *ngIf="city.errors?.['pattern']">
+                                  City should only contain alphabets!
+                              </div>
+                          </div>
+                      </div>
+  
+                      <div class="row mt-2">
+                          <div class="col">
+                              <input type="text" class="form-control" placeholder="Enter permanent address"
+                              formControlName="Address" [(ngModel)]="addEmployeeRequest.Address" required>
+                              <div class="form-text text-danger"
+                                *ngIf="address.errors?.['required'] && (address.touched || address.dirty)">
+                                Address is required!
+                              </div>
+                              <div class="form-text text-danger"
+                                *ngIf="address.errors?.['minlength'] && (address.touched || address.dirty)">
+                                Address is too short!
+                              </div>
+                              <div class="form-text text-danger"
+                                *ngIf="address.errors?.['pattern'] && (address.touched || address.dirty)">
+                                Should only contain alphabets and space!
+                              </div>
+                          </div>
+                      </div>
+  
+                      <div class="row mt-4">
+                          <div class="col   form-heading">
+                              <h6 class="text-center fst-italic">Contact Details</h6>
+                          </div>
+                          
+                      </div>
+  
+                      <div class="row">
+                          <div class="col">
+                              <input type="text" class="form-control" placeholder="Enter Phone No"
+                              formControlName="PhoneNo" [(ngModel)]="addEmployeeRequest.PhoneNo" required>
+                              <div class="form-text text-danger"
+                                *ngIf="phoneNo.errors?.['required'] && (phoneNo.touched || phoneNo.dirty)">
+                                Phone No is required!
+                            </div>
+                            <div class="form-text text-danger" *ngIf="phoneNo.errors?.['pattern']">
+                                Mobile Phone No should be 10 digit number!
+                            </div>
+                          </div>
+                          <div class="col">
+                              <input type="text" class="form-control" placeholder="Enter Email Id"
+                              formControlName="EmailId" [(ngModel)]="addEmployeeRequest.EmailId" required>
+                              <div class="form-text text-danger"
+                                *ngIf="emailId.errors?.['required'] && (emailId.touched || emailId.dirty)">
+                                EmailId is required!
+                            </div>
+                            <div class="form-text text-danger" *ngIf="emailId.errors?.['email']">
+                                EmailId is Invalid!
+                            </div>
+                          </div>
+                      </div>
+                      
+                      <div class="row mt-2">
+                          
+                          <div class="col pantext">
+                              <input type="text" class="form-control" placeholder="Enter your PAN no"
+                              formControlName="PAN" [(ngModel)]="addEmployeeRequest.PAN" required>
+                              <div class="form-text text-danger"
+                                *ngIf="pan.errors?.['required'] && (pan.touched || pan.dirty)">
+                                PAN is required!
+                            </div>
+                            <div class="form-text text-danger" *ngIf="pan.errors?.['pattern']">
+                                PAN should be alphanumeric and of 10 digits
+                            </div>
+                          </div>
+                     
+                      </div>
+                  <div class="row">
+                      <div class="col modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary">Insert</button>
+                      </div>
+                  </div>
+  
+                  
+                  
+              </form>
+  
+  
+          </div>
+  
+        </div>
+      </div>
+    </div> 

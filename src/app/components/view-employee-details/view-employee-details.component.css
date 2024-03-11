@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&family=Poppins:wght@200;400;500&family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@200;400;500&family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat:wght@200&family=Poppins:wght@200;400;500&family=Young+Serif&display=swap');
+
+.navbar 
+{
+    background: #cf933afe;
+
+}
+
+.logout
+{
+    display: inline-flex;
+    color: #f7eee3;
+}
+.logout-btn
+{
+    cursor: pointer;
+    
+    color: #f7eee3;
+}
+
+.logout-btn:hover
+{
+  font-weight: bolder;
+  
+}
+.wrapper
+{
+    background:linear-gradient(to bottom right,rgb(255, 255, 255),#f7eee3);
+    height: 100vh;
+}
+a
+{
+    text-decoration: none;
+}
+.heading .head-body .title
+{
+    font-size: 3em;
+    padding-top: 50px;
+    font-family: 'Poppins', sans-serif;
+    color:rgb(135, 110, 69);
+    letter-spacing: 0.3rem;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+ .card-group .card
+{
+    background:linear-gradient(to bottom right,#f9f9f9,#f3eee7d1,#f3d8b0);
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+   
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px rgb(102, 99, 99);
+    
+}
+.card-group .card:hover
+{
+    /* height: 100px; */
+    /* box-shadow: 0px 0px 10px 0px rgb(86 82 90 / 35%) !important; */
+    box-shadow: 0px 10px 10px rgb(102, 99, 99);
+    background: wheat;
+}
+/* .feature-buttons .modal-header
+{
+    background: #cf933afe;
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgba(245, 245, 245, 0.772);
+}
+.feature-buttons .modal-footer button
+{
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 1px 2px 5px rgb(91, 87, 87);
+    padding: 5px 20px;
+    cursor: pointer;
+    color: rgb(254, 254, 254);
+    
+    text-align: center;
+    position: relative;
+    
+} */
+.dependents
+button
+{
+    width: 130px;
+    height: 30px;
+    font-size: 0.7rem;
+    border-radius: none !important;
+    color: black;
+}
+
+.form-label
+{
+  font-weight:500;
+   padding: 3px;
+   color: rgb(130, 131, 131);
+   font-size: 0.8rem;
+
+}
+
+.form-heading h6
+{
+    color: #cf933afe;
+    font-weight: bold;
+       
+}
+form input,select
+{
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 0.8rem;
+}
+.id small
+{
+    display: inline-flex;
+    justify-content: center;
+    padding: 9px;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    
+}
+.id small:nth-child(1)
+{
+    border-right: 1px solid black;
+}
+.feature-buttons
+{
+    display: flex;
+    justify-content: center;
+}
+.edit-emp-btn,
+.submit-claim-btn {
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 1px 2px 5px rgb(91, 87, 87);
+    
+    cursor: pointer;
+    color: rgb(254, 254, 254);
+    margin-right: 20px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+    
+}
+.edit-emp-btn
+{
+    background: whitesmoke;
+    color: #cf933afe;
+}
+.submit-claim-btn
+{
+    background:#cf933afe
+}
+.edit-emp-btn:hover,
+.submit-claim-btn:hover
+{
+    font-weight: bold;
+    box-shadow: 1px 5px 10px rgb(52, 49, 49);
+}
+#caption {
+    color: rgb(132, 129, 129);
+    font-size: 2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+}
+.details .card-body .card-title
+{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(135, 110, 69);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: 15px;
+    letter-spacing: 0.02em;
+}
+.details .card-body p
+{
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 0.8rem;
+    color: rgba(35, 34, 34, 0.731);
+   
+}
+.details .claim .card-body span
+{
+    font-weight: bold;
+}
+
+
+.details .card-body p i
+{
+    color: black;
+}

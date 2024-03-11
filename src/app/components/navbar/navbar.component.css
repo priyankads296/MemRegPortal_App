@@ -1,0 +1,23 @@
+.navbar 
+{
+    background: #cf933afe;
+
+}
+
+.logout
+{
+    display: inline-flex;
+    color: #f7eee3;
+}
+.logout-btn
+{
+    cursor: pointer;
+    
+    color: #f7eee3;
+}
+
+.logout-btn:hover
+{
+  font-weight: bolder;
+  
+}

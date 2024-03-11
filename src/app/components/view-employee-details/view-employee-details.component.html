@@ -1,0 +1,232 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+        <div class="intro">
+            <!-- <div class="card text-center">
+            
+                <div class="card-body">
+                <h5 class="card-title heading" >{{employeeDetails.Name}}</h5>
+                <div class="id">
+                    <small class="card-text text-muted">{{employeeDetails.Id}}</small>
+                    <small class="card-text text-muted">{{employeeDetails.Country}}</small>
+                </div>
+              
+              
+            </div> -->
+            <div class="heading text-center">
+                <div class="head-body">
+                    <h5 class="title" >{{employeeDetails.Name}}</h5>
+                    <div class="id">
+                        <small class=" text-muted">{{employeeDetails.Id}}</small>
+                        <small class=" text-muted">{{employeeDetails.Country}}</small>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-buttons">
+                <div class="edit-emp">
+                    <button type="button" class="btn btn-primary edit-emp-btn" data-bs-toggle="modal" data-bs-target="#editEmployeeModal">
+                      <i class="bi bi-pencil-square"></i>&nbsp;Edit
+                    </button>
+                    <div class="modal fade" id="editEmployeeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Edit Employee Information</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                          </div>
+                          <div class="modal-body">
+                            
+                              <form #form="ngForm" (ngSubmit)="updateEmployee()">
+                                  <div class="row">
+                                      <div class="col">
+                                          <input type="text" class="form-control" placeholder="Enter the Name"
+                                          id="name" name="name"  [(ngModel)]="employeeDetails.Name" readonly>
+                                      </div>
+                                      
+                                  </div>
+                  
+                                  <div class="row mt-4 text-center">
+                                      <div class="col form-heading ">
+                                          <h6 class="fst-italic ">Personal Details</h6>
+                                      </div>
+                                  </div>
+                  
+                                  <div class="row">
+                                      <div class="col">
+                                          <label for="datepicker" class="form-label">Date Of Birth</label>
+                                          <input type="text" class="form-control" id="datepicker" name="dob"
+                                          [(ngModel)]="empDOB" readonly>
+                                      </div>
+                                      <div class="col">
+                                          <div class="row">
+                                              <label for="gender" class="form-label">Gender</label>
+                                          </div>
+                                          <div class="row">
+                                              <div class="col">
+                                                  <div class="form-check form-check-inline">
+                                                      <input class="form-check-input" type="radio" name="gender" id="male"
+                                                       value="male" [(ngModel)]="employeeDetails.Gender" disabled>
+                                                      <label class="form-check-label" for="male">
+                                                        Male
+                                                      </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                      <input class="form-check-input" type="radio" name="gender" id="female"
+                                                      value="female" [(ngModel)]="employeeDetails.Gender" disabled>
+                                                      <label class="form-check-label" for="female" >
+                                                        Female
+                                                      </label>
+                                                    </div>
+                                              </div>
+                                          </div>
+                                      </div>  
+                                  </div> 
+                                  <div class="row mt-4 text-center">
+                                      <div class="col   form-heading">
+                                          <h6 class=" fst-italic">Complete Address</h6>
+                                      </div>
+                                      
+                                  </div>
+                  
+                                      <div class="row mt-2 ">
+                                          
+                                          <div class="col">
+                  
+                                              <select class="select form-control" (change)="populateStates()" id="country"
+                                              name="country" [(ngModel)]="employeeDetails.Country">
+                                                  <option value="" disabled selected>--Choose Country--</option>
+                                                  <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+                                              </select>
+                                             
+                                          </div>
+                                          <div class="col">
+                                              <select class="select form-control" id="state" name="state"
+                                                  [(ngModel)]="selectedState">
+                                                  <option value="" disabled selected>--Choose State--</option>
+                                                  <option *ngFor="let state of states" [value]="state">{{state}}</option>
+                                              </select>
+                                              
+                                          </div>
+                                          <div class="col">
+                                              <input type="text" class="form-control" id="city" name="city" [(ngModel)]="employeeDetails.City"
+                                              >
+                                             
+                                          </div>
+                                      </div>
+                  
+                                      <div class="row mt-2">
+                                          <div class="col">
+                                              <input type="text" class="form-control" placeholder="Enter permanent address"
+                                               name="address" id="address" [(ngModel)]="employeeDetails.Address">
+                                          </div>
+                                      </div>
+                  
+                                      <div class="row mt-3">
+                                          <div class="col text-center  form-heading">
+                                              <h6 class=" fst-italic">Contact Details</h6>
+                                          </div>
+                                          
+                                      </div>
+                  
+                                      <div class="row mt-2">
+                                          <div class="col">
+                                              <input type="text" class="form-control" placeholder="Enter Phone No" 
+                                               name="phoneNo" id="phoneNo" [(ngModel)]="employeeDetails.PhoneNo">
+                                          </div>
+                                          <div class="col">
+                                              <input type="text" class="form-control" placeholder="Enter Email Id"
+                                              name="email" id="email" [(ngModel)]="employeeDetails.EmailId">
+                                          </div>
+                                      </div>
+                                      
+                                      <div class="row mt-2">
+                                          
+                                          <div class="col pantext">
+                                              <input type="text" class="form-control" placeholder="Enter your PAN no"
+                                              name="pan" id="pan" [(ngModel)]="employeeDetails.PAN">
+                                          </div>
+                                     
+                                      </div>
+                                  <div class="row">
+                                      <div class="col modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Edit</button>
+                                      </div>
+                                  </div>
+                  
+                                  
+                                  
+                              </form>
+                  
+                  
+                          </div>
+                  
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="claim-emp">
+                    <button type="button" class="btn btn-primary submit-claim-btn" data-bs-toggle="modal" data-bs-target="#claimEmployeeModal">
+                      <i class="bi bi-plus-lg"></i>&nbsp;Add Claim&nbsp;
+                    </button>
+                    <app-claim-modal></app-claim-modal>
+                </div>
+                
+            </div>
+            
+          
+        </div>
+        <!-- <div>
+            <p id="caption">Making HealthCare Better Together!</p>
+        </div> -->
+
+    <div class="details">
+        <div class="card-group">
+            <div class="card m-3 personal">
+              <!-- <img src="..." class="card-img-top" alt="..."> -->
+              <div class="card-body" >
+                <h5 class="card-title mb-3"><i class="bi bi-file-person"></i>  Personal Details</h5>
+                <p class="card-text"><i class="bi bi-calendar-event"></i>&nbsp; {{employeeDetails.DOB| date:'dd-MM-yyyy':'UTC'}}</p>
+                <p class="card-text"><i class="bi bi-geo-alt-fill"></i>&nbsp; {{employeeDetails.Address}}</p>
+                <p class="card-text"><i class="bi bi-geo-fill"></i>&nbsp; {{employeeDetails.City}},&nbsp;{{employeeDetails.State}}, {{employeeDetails.Country}}</p>
+                
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card m-3 claim">
+              <!-- <img src="..." class="card-img-top" alt="..."> -->
+              <div class="card-body">
+                <h5 class="card-title mb-3">  Claim Details</h5>
+                <div *ngIf="claimDetails && claimDetails[0]!=null " >
+                  <!-- <div *ngFor="let claim of claimDetails"> -->
+                    <p class="card-text dependents"><span>Dependents:</span>&nbsp;{{claimDetails[0].Dependents[0].Name}}
+                      <!-- <button type="button" class="btn btn-primary bg-transparent border-0" data-bs-toggle="modal" data-bs-target="#claimEmployeeModal">
+                        <i class="bi bi-plus-lg"></i>&nbsp;<span> Add Claim&nbsp;</span>
+                      </button> -->
+                      
+                    </p>
+                    <p class="card-text"><span>Category:</span>&nbsp;{{claimDetails[0].Description}}</p>
+                    <p class="card-text"><span>Total Amount of Claim:</span>&nbsp;<i class="bi bi-currency-rupee"></i>{{claimDetails[0].Amount}}</p>
+                    <p class=" text-end" *ngIf="claimDetails.length>1"><a routerLink="/claim-page"><small class="text-muted">+&nbsp;View More</small></a></p>
+                  <!-- </div> -->
+                  
+                </div>
+                
+                  <p *ngIf="!claimDetails || claimDetails[0]==null">No Claims Found</p>
+              </div>
+            </div>
+            <div class="card m-3 contact">
+              <!-- <img src="..." class="card-img-top" alt="..."> -->
+              <div class="card-body">
+                <h5 class="card-title mb-3"><i class="bi bi-person-lines-fill"></i>  Contact Details</h5>
+                <p class="card-text"><i class="bi bi-telephone-fill"></i>&nbsp; {{employeeDetails.PhoneNo}}</p>
+                <p class="card-text"><i class="bi bi-envelope-fill"></i>&nbsp; {{employeeDetails.EmailId}}</p>
+                <p class="card-text"><i class="bi bi-person-bounding-box"></i>&nbsp; {{employeeDetails.PAN}}</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+          
+    </div>
+    
+</div>
+<app-claim-modal></app-claim-modal>

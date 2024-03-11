@@ -1,0 +1,54 @@
+.modal-header
+{
+    background: #cf933afe;
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+    color: rgba(245, 245, 245, 0.772);
+}
+.modal-footer button
+{
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 1px 2px 5px rgb(91, 87, 87);
+    padding: 5px 20px;
+    cursor: pointer;
+    color: rgb(254, 254, 254);
+    
+    text-align: center;
+    position: relative;
+    
+}
+.form-label
+{
+   font-weight:500;
+   padding: 3px;
+   color: rgb(130, 131, 131);
+   font-size: 0.8rem;
+
+}
+
+.form-heading h6
+{
+    color: #cf933afe;
+    
+       
+}
+*
+{
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 0.8rem;
+}
+.dep-btn
+{
+    width: 200px;
+}
+.dependents label[class="form-label"]
+{
+    /* display: inline-flex; */
+   margin-left: 70px;
+}
+.dependents
+{
+    background-color: rgb(222, 230, 230);
+}

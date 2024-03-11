@@ -1,0 +1,153 @@
+/* .outer
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    background: url("/assets/pics/bgs4.jpg")no-repeat;
+    background-position: center;
+    background-size: cover;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+body {
+	margin: 0;  
+	padding: 0;
+	font-family: 'Montserrat', sans-serif;
+    background:linear-gradient(to right,#f9f9f9,#c6a778e1);
+}
+.home {
+	/* background-image: url("a2.jpg"); */
+	background-size: cover;
+	height: 100vh;
+}
+nav {
+	text-align: center;
+	padding-top: 2%;
+}
+nav a
+{
+    pointer-events: none;
+}
+.logo {
+	display: inline-block;
+	color: #cf933afe;;
+	text-transform: capitalize;
+	font-weight: bold;
+	font-size: 40px;
+	font-family: 'Cookie', cursive;
+}
+nav a {
+	text-decoration: none;
+	color: #626063;
+	font-size: 18px;
+	text-transform: uppercase;
+	margin: 0 25px;
+	letter-spacing: 2px;
+	font-weight: 700;
+}
+.banner-area {
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	width: 100%;
+    
+}
+.banner-area h3 {
+	font-size: 80px;
+	text-transform: capitalize;
+	color: #cf933afe;;
+	margin: 0 0 40px 0;
+	font-family: 'Acme', sans-serif;
+    
+	line-height: 1;
+}
+.banner-area h3 span{
+	color: #626063;
+}
+.banner-area h5 {
+	margin: 0;
+	padding: 0;
+	color: #929293;
+	font-size: 1rem;
+    /* width: 60%; */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+	line-height: 0;
+    margin-bottom: 20px;
+    animation: fadeIn 3s;
+    -webkit-animation: fadeIn 3s;
+    -moz-animation: fadeIn 3s;
+    -o-animation: fadeIn 3s;
+    -ms-animation: fadeIn 3s;
+    
+}
+.banner-area h2 span {
+	color:#cf933afe;;
+}
+.banner-area button {
+	display: inline-block;
+	margin-top: 50px;
+	background: #cf933afe;;
+	padding: 10px 30px;
+	font-size: 20px;
+	text-transform: uppercase;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.413);
+    border: none;
+}
+a{
+    text-decoration: none;
+    color: #f9f9f9;
+}
+.banner-area button:hover
+{
+    font-weight: bold;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@media (max-width:800px) {
+	nav a {
+		font-size: 16px;
+		margin: 0 10px;
+	}
+	.banner-area h2 {
+		font-size: 1.7em;
+	}
+	.banner-area h3 {
+		margin: 0 0 20px 0;
+		font-size: 70px;
+	}
+	.home {
+		background-position: 58%;
+	}
+}
+@media (max-width: 767px){
+	.banner-area h3 {
+		font-size: 35px;
+	}
+	.banner-area h2 {
+		font-size: 1em;
+	}
+	.banner-area a {
+		font-size: 14px;
+		margin-top: 30px;
+	}
+	nav a {
+		font-size: 8px;
+		margin: 0 5px;
+	}
+	.logo {
+		font-size: 30px;
+	}
+	.home {
+		background-position: 60%;
+	}
+}  

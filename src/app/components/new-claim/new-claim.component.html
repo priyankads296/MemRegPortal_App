@@ -1,0 +1,211 @@
+<div class="modal fade" id="newClaimModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Claim Information</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            
+              <form [formGroup]="claimForm" (ngSubmit)="addClaim()">
+                  <div class="row">
+                      <div class="col">
+                          <label for="memberName" class="form-label">Member Name</label>
+                          <input type="text" class="form-control" placeholder="Enter the Member Name"
+                          id="memberName" formControlName="MemberName"  
+                          [(ngModel)]="claimDetails.MemberName" (input)="updateDOB()"
+                           autocomplete="off">
+                          <div class="form-text text-danger"
+                           *ngIf="memberName.errors?.['required'] && (memberName.touched || memberName.dirty)">
+                            Name is required!
+                         </div>
+                         <div class="form-text text-danger"
+                           *ngIf="memberName.errors?.['pattern'] && (memberName.touched || memberName.dirty)">
+                           Should only contain alphabets and space!
+                         </div>
+                      </div>
+                      <div class="col">
+                        <label for="dobdatepicker" class="form-label">Date Of Birth</label>
+                        <input type="text" class="form-control" id="datepicker" placeholder="dd-mm-yyyy"
+                        [readonly]="dobPopulated"
+                        [(ngModel)]="empDOB" formControlName="DOB" >
+                      </div>
+                      
+                  </div>
+  
+                  <div class="row mt-4 text-center">
+                      <div class="col form-heading">
+                          <h6 class="fst-italic">Claim Details</h6>
+                      </div>
+                     
+                  </div>
+  
+                  <div class="row doa-dob">
+                      
+                      <div class="col ">
+                          
+                              <label for="doadatepicker" class="form-label">Date Of Admission:</label>
+                              <input type="date" class="form-control" id="doadatepicker"
+                              formControlName="AdmissionDate"
+                              [(ngModel)]="claimDetails.AdmissionDate" >
+                          
+                      </div>
+                      <div class="col">
+                        
+                            <label for="disdatepicker" class="form-label">Date Of Discharge:</label>
+                            <input type="date" class="form-control" id="disdatepicker"
+                            formControlName="DischargeDate"
+                            [(ngModel)]="claimDetails.DischargeDate" >
+                        
+                    </div>
+
+                  </div> 
+                  <div class="row mt-2">
+                    <div class="dependents p-2">
+                        <label for="memberName" class="form-label">Dependent 1:&nbsp;</label>
+                        <button type="button" class="form-control btn btn-outline-warning dep-btn" (click)="openDependentForm()"
+                        id="depName1"  >Add Dependent Details</button>
+                        <div *ngIf="showDependentForm" >
+                             <form [formGroup]="dependentForm" >
+                                <div class="row mt-2">
+                                    <div class="col mt-1">
+                                        <label for="depName1">Name :</label>
+                                        <input type="text" class="form-control" id="name" 
+                                        formControlName="Name" placeholder="Enter the Name" [(ngModel)]="dependentDetails.Name">
+                                    </div>
+                                    <div class="col mt-1">
+                                        <div class="row">
+                                            <label for="gender" class="">Gender</label>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" id="male"
+                                                     value="male" [(ngModel)]="dependentDetails.Gender" 
+                                                     formControlName="Gender">
+                                                    <label class="form-check-label" for="male">
+                                                      Male
+                                                    </label>
+                                                  </div>
+                                                  <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" id="female"
+                                                    value="female" [(ngModel)]="dependentDetails.Gender"
+                                                    formControlName="Gender">
+                                                    <label class="form-check-label" for="female" >
+                                                      Female
+                                                    </label>
+                                                  </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                    
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col mt-1 mb-2">
+                                        <label for="dob ">Date Of Birth :</label>
+                                        <input type="date" class="form-control" id="dob" 
+                                        [(ngModel)]="dependentDetails.DOB"
+                                        formControlName="DOB">
+                                    </div>
+                                    
+                                    <div class="col mt-1 mb-2">
+                                        <div class="row">
+                                            <label for="address">Complete Address :</label>
+                                        </div>
+                                        <div class="row p-2">
+                                        <textarea class="form-control" id="address" cols="30" rows="4"
+                                        [(ngModel)]="dependentDetails.Address"
+                                        formControlName="Address"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col ">
+                                        <label for="phoneNo">Phone No :</label>
+                                        <input type="text" class="form-control mt-1" placeholder="Enter Phone No" 
+                                          id="phoneNo" [(ngModel)]="dependentDetails.PhoneNo"
+                                          formControlName="PhoneNo">
+                                    </div>
+                                    <div class="col ">
+                                        <label for="panNo">PAN No :</label>
+                                        <input type="text" class="form-control mt-1" placeholder="Enter PAN No" 
+                                        formControlName="PAN"  id="panNo" [(ngModel)]="dependentDetails.PAN">
+                                        
+                                    </div>
+                                    
+                                </div>
+                                <div class="row mt-2 mb-2">
+                                    <div class="col">
+                                        <label for="emailId">Email Id :</label>
+                                        <input type="text" class="form-control mt-1" placeholder="Enter Email Id" 
+                                        formControlName="EmailId"  id="emailId" [(ngModel)]="dependentDetails.EmailId">
+                                    </div>
+                                </div>
+                                
+
+                                
+                            </form> 
+                            
+                            <button (click)="closeDependentForm()"  class="btn btn-secondary">Close</button>
+                        </div>
+                    </div>
+
+  
+                    
+                    
+                       
+                    
+                    
+                </div>
+                  <div class="row mt-2">
+                          
+                            <div class="claimCategory col">
+                            
+                                <label for="category" class="form-label">Description :</label>
+                                <input type="text" class="form-control mt-1" placeholder="Enter Description" 
+                                id="description" [(ngModel)]="claimDetails.Description"
+                                formControlName="Description">
+                                 
+                              </div>
+                          
+                          <div class="col">
+                            <label for="category" class="form-label">Provider Details:</label>
+                            <input type="text" class="form-control" placeholder="Enter Provider Name"
+                              id="proName" [(ngModel)]="claimDetails.ProviderName"
+                              formControlName="ProviderName">
+                          </div>
+                          
+                          
+                          
+                      </div>
+  
+                                      
+                      
+                      <div class="row mt-4">
+                          
+                          <div class="col input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="bi bi-currency-rupee"></i></span>
+                            <input type="number" class="form-control" placeholder="Enter Bill Amount" 
+                              id="bill" formControlName="Amount" [(ngModel)]="claimDetails.Amount ">
+                          </div>
+                          
+                      </div>
+                      
+                      
+                  <div class="row">
+                      <div class="col modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-success">Submit</button>
+                      </div>
+                  </div>
+  
+                  
+                  
+              </form>
+  
+  
+          </div>
+  
+        </div>
+    </div>
+</div>
